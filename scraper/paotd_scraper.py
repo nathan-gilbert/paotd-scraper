@@ -8,6 +8,11 @@ def is_album(text):
     return False
 
 
+def get_release_date(text):
+    released = text.find("released")
+    return released
+
+
 if __name__ == "__main__":
     with open('../artist_list.txt', 'r') as artist_file:
         for artist in artist_file:
@@ -21,6 +26,8 @@ if __name__ == "__main__":
                 link_content = link_page.content[:200]
                 if is_album(link_content.lower()):
                     print(link_page.title)
+
+                    date_str = get_release_date(link_page.content)
             # print(discography.content)
             # print(discography.links)
             print("end.")
