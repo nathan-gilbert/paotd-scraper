@@ -1,4 +1,5 @@
 import wikipedia
+import re
 
 
 def is_album(text):
@@ -8,9 +9,15 @@ def is_album(text):
     return False
 
 
+dates = re.compile(r"\d{2}[/-]\d{2}[/-]\d{4}")
+
+
 def get_release_date(text):
-    released = text.find("released")
-    return released
+    results = re.findall(dates, text)
+    if len(results) > 0:
+        return results[0]
+
+    return ""
 
 
 if __name__ == "__main__":
@@ -22,12 +29,14 @@ if __name__ == "__main__":
             print(f"{artist} ...")
             discography = wikipedia.page(f"{artist}_discography")
             for link in discography.links:
-                link_page = wikipedia.page(link)
+                try:
+                    link_page = wikipedia.page(link)
+                except wikipedia.exceptions.PageError:
+                    continue
                 link_content = link_page.content[:200]
                 if is_album(link_content.lower()):
-                    print(link_page.title)
-
                     date_str = get_release_date(link_page.content)
+                    print(f"{link_page.title} : {date_str}")
             # print(discography.content)
             # print(discography.links)
             print("end.")
