@@ -1,5 +1,5 @@
 import wikipedia
-import re
+import datefinder
 
 
 def is_album(text):
@@ -9,15 +9,14 @@ def is_album(text):
     return False
 
 
-dates = re.compile(r"\d{2}[/-]\d{2}[/-]\d{4}")
-
-
 def get_release_date(text):
-    results = re.findall(dates, text)
-    if len(results) > 0:
-        return results[0]
+    matches = datefinder.find_dates(text)
+    first_match = ""
+    for match in matches:
+        first_match = match.strftime('%m-%d-%Y')
+        break
 
-    return ""
+    return first_match
 
 
 if __name__ == "__main__":
