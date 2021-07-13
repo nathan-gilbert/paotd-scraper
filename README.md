@@ -1,2 +1,2 @@
-# paotd
-Prog Album of the Day
+# paotd-scrapper
+Prog Album of the Day Website Scrapper
