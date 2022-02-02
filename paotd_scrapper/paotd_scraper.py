@@ -16,6 +16,3 @@ def get_release_date(text):
         break
 
     return first_match
-
-
-

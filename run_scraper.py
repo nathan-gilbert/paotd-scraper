@@ -1,5 +1,6 @@
 import wikipedia
 
+
 if __name__ == "__main__":
     with open('../artist_list.txt', 'r') as artist_file:
         for artist in artist_file:
@@ -19,4 +20,4 @@ if __name__ == "__main__":
                     print(f"{link_page.title} : {date_str}")
             # print(discography.content)
             # print(discography.links)
-            print("end."):w
+            print("end.")
