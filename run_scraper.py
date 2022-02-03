@@ -1,5 +1,5 @@
 import wikipedia
-
+from paotd_scrapper import is_album, get_release_date
 
 if __name__ == "__main__":
     with open('../artist_list.txt', 'r') as artist_file:
