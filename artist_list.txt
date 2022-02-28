@@ -1,5 +1,5 @@
 Pink Floyd
-#King Crimson
-#Yes
-#Jethro Tull
-#Genesis
+King Crimson
+Yes
+Jethro Tull
+Genesis
