@@ -54,8 +54,8 @@ def get_artist_albums(artist_id: str) -> List[Album]:
 
 
 def export_to_file(albums: List[Album]):
-    with open("all_albums.pkl", "wb") as outFile:
-        pickle.dump(albums, outFile)
+    with open("all_albums.pkl", "wb") as out_file:
+        pickle.dump(albums, out_file)
 
 
 if __name__ == "__main__":
