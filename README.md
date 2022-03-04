@@ -6,7 +6,7 @@ Scrapes Wikipedia for Prog Artists, Albums and Release Dates
 
 - `python3 -m venv venv`
 - `source venv/bin/activate.fish`
-- `python paotd_scraper.py`
+- `python wikipedia_scraper.py`
 
 ### TODO
 
