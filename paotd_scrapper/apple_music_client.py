@@ -1,4 +1,6 @@
-from typing import List, Dict
+from typing import List
+import pickle
+
 from dotenv import dotenv_values
 import applemusicpy
 
@@ -21,8 +23,11 @@ def get_artist_ids(artist_list: List[str]) -> List[Artist]:
     artist_objs: List[Artist] = []
     for artist_name in artist_list:
         results = am.search(artist_name, types=['artists'], limit=1)
-        for item in results['results']['artists']['data']:
-            artist_objs.append(Artist(name=artist_name, id=item['id']))
+        if 'artists' in results['results']:
+            for item in results['results']['artists']['data']:
+                artist_objs.append(Artist(name=artist_name, id=item['id']))
+        else:
+            print(f"No results for {artist_name}")
     return artist_objs
 
 
@@ -48,13 +53,20 @@ def get_artist_albums(artist_id: str) -> List[Album]:
     return albums
 
 
+def export_to_file(albums: List[Album]):
+    with open("all_albums.pkl", "wb") as outFile:
+        pickle.dump(albums, outFile)
+
+
 if __name__ == "__main__":
     artist_names = read_artist_list()
     artists = get_artist_ids(artist_names)
-    all_albums = []
+    all_albums: List[Album] = []
     for artist in artists:
         all_albums.extend(get_artist_albums(artist.id))
 
     for album in all_albums:
         print(album)
     print(f"{len(all_albums)} total albums")
+
+    export_to_file(all_albums)
