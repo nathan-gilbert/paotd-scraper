@@ -1,9 +1,9 @@
 
 
-if __name__ == "__main__":
+def parse_apple_music_artist_xml():
     artists = set()
-    with open("../AppleMusicLibrary.xml", 'r', encoding='utf-8') as inFile:
-        for line in inFile:
+    with open("../AppleMusicLibrary.xml", 'r', encoding='utf-8') as in_file:
+        for line in in_file:
             line = line.strip()
             if line.startswith("<key>Artist</key>"):
                 line = line.replace("<key>Artist</key>", "")
@@ -14,6 +14,6 @@ if __name__ == "__main__":
 
     artists = list(artists)
     artists.sort()
-    with open('artist_list.txt', 'w', encoding='utf-8') as outFile:
+    with open('artist_list.txt', 'w', encoding='utf-8') as out_file:
         for artist in artists:
-            outFile.write(f"{artist}\n")
+            out_file.write(f"{artist}\n")

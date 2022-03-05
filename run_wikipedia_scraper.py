@@ -2,7 +2,7 @@ import wikipedia
 from album_scrapers.wikipedia_scraper import is_album, get_release_date
 
 if __name__ == "__main__":
-    with open('../artist_list.txt', 'r') as artist_file:
+    with open('../artist_list.txt', 'r', encoding="utf-8") as artist_file:
         for artist in artist_file:
             if artist.startswith("#"):
                 continue

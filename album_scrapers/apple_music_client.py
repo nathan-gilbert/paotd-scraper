@@ -53,20 +53,9 @@ def get_artist_albums(artist_id: str) -> List[Album]:
     return albums
 
 
-def export_to_file(albums: List[Album]):
+def export_to_pickle(albums: List[Album]):
     with open("all_albums.pkl", "wb") as out_file:
         pickle.dump(albums, out_file)
 
 
-if __name__ == "__main__":
-    artist_names = read_artist_list()
-    artists = get_artist_ids(artist_names)
-    all_albums: List[Album] = []
-    for artist in artists:
-        all_albums.extend(get_artist_albums(artist.id))
 
-    for album in all_albums:
-        print(album)
-    print(f"{len(all_albums)} total albums")
-
-    export_to_file(all_albums)
