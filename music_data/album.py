@@ -9,3 +9,7 @@ class Album:
     releaseDate: str
     isSingle: bool
     isCompilation: bool
+
+    def __iter__(self):
+        return iter([self.id, self.artist, self.name, self.releaseDate,
+                     self.isSingle,self.isCompilation])
