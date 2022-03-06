@@ -6,10 +6,10 @@ class Album:
     id: str
     name: str
     artist: str
-    releaseDate: str
-    isSingle: bool
-    isCompilation: bool
+    release_date: str
+    is_single: bool
+    is_compilation: bool
 
     def __iter__(self):
-        return iter([self.id, self.artist, self.name, self.releaseDate,
-                     self.isSingle,self.isCompilation])
+        return iter([self.id, self.artist, self.name, self.release_date,
+                     self.is_single, self.is_compilation])

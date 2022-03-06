@@ -4,7 +4,9 @@ from music_data.album import Album
 
 
 def export_albums_to_csv(albums: List[Album]):
-    with open('albums.csv', 'wb') as csv_file:
+    headers = ["id", "artist", "name", "release_date", "is_single",
+               "is_compilation"]
+    with open('albums.csv', 'w', encoding="utf-8") as csv_file:
         wr = csv.writer(csv_file, delimiter=',')
-        for album in albums:
-            wr.writerow(list(album))
+        wr.writerow(headers)
+        wr.writerows(albums)
