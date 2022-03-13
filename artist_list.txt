@@ -43,6 +43,7 @@ Kate Bush
 Kikagaku Moyo
 Lunatic Soul
 Riverside
+Fates Warning
 Mammatus
 Mastodon
 Matching Mole
@@ -53,6 +54,7 @@ Supertramp
 Peter Hammill
 Mike Oldfield
 Robert Wyatt
+Robert Fripp
 Mahavishnu Orchestra
 Return To Forever
 Steve Hackett
@@ -66,3 +68,9 @@ Queensrÿche
 Don Caballero
 Radiohead
 Ulver
+Roger Water
+David Gilmour
+Deep Purple
+Voivod
+Godspeed You! Black Emperor
+Russian Circles
