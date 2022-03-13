@@ -1,5 +1,7 @@
 # Prog Album Release Date Scraper
 
+[![Pylint](https://github.com/nathan-gilbert/paotd-scraper/actions/workflows/pylint.yml/badge.svg)](https://github.com/nathan-gilbert/paotd-scraper/actions/workflows/pylint.yml)
+
 Scrapes Wikipedia for Prog Artists, Albums and Release Dates
 
 ### Running
