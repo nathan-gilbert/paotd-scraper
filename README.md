@@ -6,6 +6,7 @@ Scrapes Wikipedia for Prog Artists, Albums and Release Dates
 
 ### Running
 
+- Store Apple Music Developer Creds in `.env`
 - `python3 -m venv venv`
 - `source venv/bin/activate.fish`
 - `python run_wikipedia_scraper.py` -- scrapes wikipedia for albums from the 
