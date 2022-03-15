@@ -21,8 +21,8 @@ if __name__ == "__main__":
     for artist in artists:
         all_albums.extend(get_artist_albums(am, artist.id))
 
-    for album in all_albums:
-        print(album)
+    # for album in all_albums:
+    #    print(album)
     print(f"{len(all_albums)} total albums")
 
     export_albums_to_csv(all_albums)

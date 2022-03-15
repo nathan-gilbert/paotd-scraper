@@ -35,7 +35,7 @@ def get_artist_albums(am, artist_id: str) -> List[Album]:
         album_id = item['id']
         album_name = item['attributes']['name']
         album_release_date_str = item['attributes']['releaseDate']
-        print(album_release_date_str)
+        # print(album_release_date_str)
         try:
             album_release_date = datetime.datetime.strptime(
                 album_release_date_str, "%Y-%m-%d")
@@ -43,10 +43,10 @@ def get_artist_albums(am, artist_id: str) -> List[Album]:
             try:
                 album_release_date = datetime.datetime.strptime(
                     album_release_date_str, "%Y-%m")
-                #print(f"Incomplete release date found for {album_name} of "
+                # print(f"Incomplete release date found for {album_name} of "
                 #      f"{album_release_date_str}")
             except ValueError:
-                #print(f"Incomplete release date found for {album_name} of "
+                # print(f"Incomplete release date found for {album_name} of "
                 #      f"{album_release_date_str}")
                 continue
 
