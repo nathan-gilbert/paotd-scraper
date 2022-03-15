@@ -10,7 +10,7 @@ Scrapes Wikipedia for Prog Artists, Albums and Release Dates
 - `source venv/bin/activate.fish`
 - `python run_wikipedia_scraper.py` -- scrapes wikipedia for albums from the 
   `artist_list.txt`
-- `python run_apple_scraper.py` -- runs the apple music scraper and creates 
-  a csv file of all the albums from the listed artists.
+- `python run_apple_scraper.py` -- runs the Apple Music scraper and creates 
+  a csv file of all the albums from the artist list.
 
 ### TODO
